@@ -1,0 +1,3 @@
+[submodule "src/main/resources/Client"]
+	path = src/main/resources/Client
+	url = https://github.com/ErasmusProjectFTN/Client.git
