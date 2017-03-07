@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('InstitutionController', function ($scope, institutionService, $location) {
+    .controller('CourseUnitController', function ($scope, institutionService, $location) {
         
-        $scope.institution = function(){
+        $scope.courseunit = function(){
             //TODO call method from service
         				   	alertify.success("Test");
         }

@@ -15,6 +15,18 @@ angular.module('wsapp')
                            controller: 'NavbarController'
                        }
                    }
+               }).state('course', {
+                   url: '/course',
+                   views: {
+                       'content': {
+                           templateUrl: 'institution/courseunit.html',
+                           controller: 'CourseUnitController'
+                       },
+                       'navbar':{
+                           templateUrl: 'navbar/navbar.html',
+                           controller: 'NavbarController'
+                       }
+                   }
                }).state('degree', {
                    url: '/degree',
                    views: {
