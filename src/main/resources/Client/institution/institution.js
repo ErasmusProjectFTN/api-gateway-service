@@ -15,5 +15,17 @@ angular.module('wsapp')
                            controller: 'NavbarController'
                        }
                    }
+               }).state('degree', {
+                   url: '/degree',
+                   views: {
+                       'content': {
+                           templateUrl: 'institution/degree.html',
+                           controller: 'DegreeController'
+                       },
+                       'navbar':{
+                           templateUrl: 'navbar/navbar.html',
+                           controller: 'NavbarController'
+                       }
+                   }
                });
     });
