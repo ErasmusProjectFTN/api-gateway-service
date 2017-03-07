@@ -202,8 +202,8 @@ angular.module('wsapp')
    "Zimbabwean"
 ]
     //alertify.success("next");
-
-        authService.personalization($scope.data.familyname,$scope.data.givenname,$scope.data.dateofbirth,$scope.data.countryofbirth,$scope.data.placeofbirth,$scope.data.selectedOption,$scope.data.nationality1,$scope.street,$scope.postalcode,$scope.city,$scope.country,$scope.telephone,$scope.mail,
+    $scope.personalization = function(){
+            authService.personalization($scope.data.familyname,$scope.data.givenname,$scope.data.dateofbirth,$scope.data.countryofbirth,$scope.data.placeofbirth,$scope.data.selectedOption,$scope.data.nationality1,$scope.street,$scope.postalcode,$scope.city,$scope.country,$scope.telephone,$scope.mail,
         			   function(response){
 
         				   console.log(response.data);
@@ -221,4 +221,6 @@ angular.module('wsapp')
         					alertify.error("ERROR");
 
         			   });
+    }
+        
     });

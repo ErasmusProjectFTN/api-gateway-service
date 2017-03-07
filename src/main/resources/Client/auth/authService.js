@@ -46,7 +46,7 @@ angular.module('wsapp')
 		$http(req).then(onSuccess, onError);
 
         },
-		personalization: function(surname,name,dateOfBirth,countryofBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email){
+		personalization: function(username,name,dateOfBirth,countryofBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
 		
 		var req = {
 		    method: 'POST',
