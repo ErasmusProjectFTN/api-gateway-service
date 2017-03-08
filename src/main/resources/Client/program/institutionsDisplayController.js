@@ -14,7 +14,7 @@ angular.module('wsapp')
     	}
     	var pmf = {
     			identifier:"234",
-    			institutionName: "Faculty sciences",
+    			institutionName: "Faculty of sciences",
     			institutionStatus: "Accredited",
     			institutionType: "Faculty",
     			institutionAddress: "Novi Sad, Serbia",
