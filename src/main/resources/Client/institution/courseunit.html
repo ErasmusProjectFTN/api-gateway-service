@@ -1,0 +1,60 @@
+<div>
+<div class="col-md-3 col-md-offset-3" style="width:60%;" >
+    <h3>COURSE UNIT SPECIFICATION</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course unit code: </span>
+    <input type="text" class="form-control" placeholder="Enter Course unit code" ng-model="data.courseunitcode"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"> Course unit title: </span>
+    <input type="text" class="form-control" placeholder="Enter Course unit title " ng-model="data.courseunittitle "/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course unit type: </span>
+    <input type="text" class="form-control" placeholder="Enter Course unit type" ng-model="data.courseunittype"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course unit level: </span>
+    <input type="text" class="form-control" placeholder="Enter Course unit level" ng-model="data.courseunitlevel"/>
+  </div>
+   <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Url: </span>
+    <input type="text" class="form-control" placeholder="Enter Url"  ng-model="data.url"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course unit year of study: </span>
+    <input type="number" class="form-control"  ng-model="data.unityearofstudy" />
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Credit: </span>
+    <input type="number" class="form-control" required ng-model="data.credit" step="0.1"/>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course unit content: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter course unit content" ng-model="data.courseunitcontent">
+    </textarea>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Course location: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter location" ng-model="data.location">
+    </textarea>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Qualification: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter qualification" ng-model="data.qualification">
+    </textarea>
+  </div>
+  
+
+<div class="col-md-4 col-md-offset-4">
+  <button class="btn btn-primary" type="button" ng-click="courseunit()">
+    Next
+  </button>
+</div>
+
+</div>
+</div>
