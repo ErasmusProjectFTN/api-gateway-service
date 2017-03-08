@@ -1,0 +1,21 @@
+<div>
+<div class="col-md-3 col-md-offset-3" style="width:60%;" >
+ <ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="/program#institutions">Institutions</a></li>
+  <li><a data-toggle="tab" href="/program#programmes">Degree Programmes</a></li>
+  <li><a data-toggle="tab" href="/program#courses">Courses</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="institutions" class="tab-pane fade in active">
+ 	<div ng-include="'program/institutions.html'"></div>
+  </div>
+  <div id="programmes" class="tab-pane fade">
+ 	<div ng-include="'program/degree_programmes.html'"></div>
+  </div>
+  <div id="courses" class="tab-pane fade">
+ 	<div ng-include="'program/courses.html'"></div>
+  </div>
+</div>
+</div>
+</div>
