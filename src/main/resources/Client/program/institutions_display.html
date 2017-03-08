@@ -1,0 +1,50 @@
+<div ng-controller="InstitutionsDisplayController">
+	<table class="table">
+	  <tr ng-repeat="institution in institutions">
+	    <td>
+	    	<table class="table table-borderless">
+	    		<thead>
+	    			<tr><h4>{{institution.identifier}} - {{institution.institutionName}}</h4></tr>
+	    		</thead>
+	    		<tbody>
+	    			<tr>
+	    				<th>
+	    					Institution status:
+	    				</th>
+	    				<td>
+	    					{{institution.institutionStatus}}
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th>
+	    					Institution type:
+	    				</th>
+	    				<td>
+	    					{{institution.institutionType}}
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th>
+	    					Location:
+	    				</th>
+	    				<td>
+	    					{{institution.institutionAddress}}
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th>
+	    					Url:
+	    				</th>
+	    				<td>
+	    					{{institution.url}}
+	    				</td>
+	    			</tr>
+	    		</tbody>
+	    	</table>
+	    </td>
+	  </tr>
+	</table>
+</div>
