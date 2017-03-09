@@ -1,0 +1,48 @@
+<div ng-controller="CoursesDisplayController">
+	<table class="table">
+	  <tr ng-repeat="course in courses">
+	    <td>
+	    	<table class="table table-borderless">
+	    		<thead>
+	    			<tr><h4>{{course.courseUnitCode}} - {{course.courseUnitTitle}}</h4></tr>
+	    		</thead>
+	    		<tbody>
+	    			<tr>
+	    				<th>
+	    					Course unit type:
+	    				</th>
+	    				<td>
+	    					{{course.courseUnitType}}
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th>
+	    					Course unit level:
+	    				</th>
+	    				<td>
+	    					{{course.courseUnitLevel}}
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<th>
+	    					Credits:
+	    				</th>
+	    				<td>
+	    					{{course.credit}}
+	    				</td>
+	    			</tr>
+	    				<th>
+	    					Url:
+	    				</th>
+	    				<td>
+	    					<a href='{{course.url}}'>{{course.url}}</a>
+	    				</td>
+	    			</tr>
+	    		</tbody>
+	    	</table>
+	    </td>
+	  </tr>
+	</table>
+</div>
