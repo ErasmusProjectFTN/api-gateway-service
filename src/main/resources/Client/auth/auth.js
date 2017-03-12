@@ -16,6 +16,19 @@ angular.module('wsapp')
                            controller: 'NavbarController'
                        }
                    }
+               }) 
+           .state('fileupload', {
+                   url: '/personal',
+                   views: {
+                       'content': {
+                           templateUrl: 'auth/signup/personalInfoFileUpload.html',
+                           controller: 'PersonalInfoFileUploadController'
+                       },
+                       'navbar':{
+                           templateUrl: 'navbar/navbar.html',
+                           controller: 'NavbarController'
+                       }
+                   }
                })  
            .state('signup', {
                    url: '/signup',
@@ -55,8 +68,7 @@ angular.module('wsapp')
                            controller: 'NavbarController'
                        }
                    }
-               })
-        ;
+               });
 
 
         

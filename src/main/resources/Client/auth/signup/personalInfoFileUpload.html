@@ -1,0 +1,27 @@
+<div>
+<div class="col-md-4 col-md-offset-4">
+    <h3>PERSONAL INFORMATION</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Passport: </span>
+    <input type="text" class="form-control" placeholder="Enter passport identification" ng-model="data.passport"/>
+  </div>
+ <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">ID card: </span>
+    <input type="text" class="form-control" placeholder="Enter ID card number" ng-model="data.idcard"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Upload pdf with CV: </span>
+    <input type="file" class="form-control" file-model="myFile"/>
+    <input type="button" class="form-control"  ng-click="uploadFile()"/>
+  </div>
+  
+<div class="col-md-4 col-md-offset-4">
+  <button class="btn btn-primary" type="button" ng-click="personalizationAddition()">
+    Next
+  </button>
+
+</div>
+</div>
+</div>

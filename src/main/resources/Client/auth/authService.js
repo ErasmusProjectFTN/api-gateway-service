@@ -74,7 +74,26 @@ angular.module('wsapp')
 		$http(req).then(onSuccess, onError);
 
 		},
-        authenticate: function(onSuccess, onError){
+        fileUpload: function(data,myFile,onSuccess, onError){
+			var fd = new FormData();
+			var file = myFile;
+        	console.log('file is ' );
+        	console.dir(file);
+			fd.append('userid',data.userid);
+			fd.append('file', file);
+		var req = {
+		    method: 'POST',
+		    url: '/file-store-service/user/pdf',
+		    headers: {
+		        'Content-Type': undefined
+		    },
+		    data: fd
+		}
+		
+		$http(req).then(onSuccess, onError);
+
+		},
+		authenticate: function(onSuccess, onError){
         
         var req = {
 		    method: 'POST',
