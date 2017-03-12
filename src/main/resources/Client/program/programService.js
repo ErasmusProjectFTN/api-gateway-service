@@ -1,16 +1,27 @@
 angular.module('wsapp')
 .service('programService', function($http){
 	return{
-		insertInstitution: function(onSuccess, onError){ // TODO Add parameters here
+		addProgrammeInstance: function(data,onSuccess, onError){ // TODO Add parameters here
 		
 		var req = {
 		    method: 'POST',
-		    url: '//program/add', // here to write a appropriate api
+		    url: '/ects/addProgrammeInstance', 
 		    headers: {
 		        'Content-Type': 'application/x-www-form-urlencoded'
 		    },
 		    data: $.param({ 
-		    	name: name
+		    	degreeUnitCode : degreeUnitCode,
+				prerequisite : prerequisite,
+				departmentalEctsCoordinator : departmentalEctsCoordinator,
+				degreeProgrammeFinalExamination : degreeProgrammeFinalExamination,
+				location : location,
+				url : url,
+				places : places,
+				languageOfInstruction : languageOfInstruction,
+				degreeProgrammeExaminationAndAssessmentRegulations : degreeProgrammeExaminationAndAssessmentRegulations,
+				start : start,
+				duration : duration,
+				cost : cost
 		    })
 		}	
 

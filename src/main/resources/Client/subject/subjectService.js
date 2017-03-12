@@ -1,5 +1,5 @@
 angular.module('wsapp')
-.service('authService', function($http){
+.service('subjectService', function($http){
 	return{
 		insertSubject: function(name,onSuccess, onError){
 		

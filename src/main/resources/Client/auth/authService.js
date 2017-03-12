@@ -46,16 +46,16 @@ angular.module('wsapp')
 		$http(req).then(onSuccess, onError);
 
         },
-		personalization: function(username,name,dateOfBirth,countryofBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
+		personalisation: function(surname,name,dateOfBirth,countryofBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
 		
 		var req = {
 		    method: 'POST',
-		    url: '/student/add',
+		    url: '/triple-store-service/student/add',
 		    headers: {
 		        'Content-Type': 'application/x-www-form-urlencoded'
 		    },
 		    data: $.param({ 
-		    	username: username,
+		    	surname: surname,
 		    	name : name,
 				dateOfBirth : dateOfBirth,
 				countryofBirth : countryofBirth,

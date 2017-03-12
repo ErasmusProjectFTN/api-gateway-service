@@ -4,7 +4,23 @@ angular.module('wsapp')
     .controller('InstitutionController', function ($scope, institutionService, $location) {
         
         $scope.institution = function(){
-            //TODO call method from service
-        				   	alertify.success("Test");
+            institutionService.insertInstitution($scope.data,
+       			   function(response){
+
+        				   console.log(response.data);
+        				   //if(response.data.success==true){
+        				   	alertify.success("WELCOME!");
+        				   	$state.go('home');
+        				   //}else{
+        				   	//alertify.error("ERROR");
+        				   //}
+
+        			   }
+        			   ,function(response){
+
+        					console.log(response.data);
+        					alertify.error("ERROR");
+
+        			   });
         }
 });

@@ -48,7 +48,7 @@ angular.module('wsapp')
    "Chilean",
    "Chinese",
    "Colombian",
-   "Comoran",
+  "Comoran",
    "Congolese",
    "Costa Rican",
    "Croatian",
@@ -70,7 +70,7 @@ angular.module('wsapp')
    "Fijian",
    "Filipino",
    "Finnish",
-   "French",
+  "French",
    "Gabonese",
    "Gambian",
    "Georgian",
@@ -105,7 +105,7 @@ angular.module('wsapp')
    "Kuwaiti",
    "Kyrgyz",
    "Laotian",
-   "Latvian",
+  "Latvian",
    "Lebanese",
    "Liberian",
    "Libyan",
@@ -201,10 +201,11 @@ angular.module('wsapp')
    "Zambian",
    "Zimbabwean"
 ]
-    //alertify.success("next");
-    $scope.personalization = function(){
-            authService.personalization($scope.data.familyname,$scope.data.givenname,$scope.data.dateofbirth,$scope.data.countryofbirth,$scope.data.placeofbirth,$scope.data.selectedOption,$scope.data.nationality1,$scope.street,$scope.postalcode,$scope.city,$scope.country,$scope.telephone,$scope.mail,
-        			   function(response){
+     $scope.personalization = function(){
+        //alertify.success("next");
+
+        authService.personalisation($scope.data.familyname,$scope.data.givenname,$scope.data.dateofbirth,$scope.data.countryofbirth,$scope.data.placeofbirth,$scope.data.selectedOption,$scope.data.nationality1,$scope.street,$scope.postalcode,$scope.city,$scope.country,$scope.telephone,$scope.mail,
+       			   function(response){
 
         				   console.log(response.data);
         				   //if(response.data.success==true){
@@ -221,6 +222,5 @@ angular.module('wsapp')
         					alertify.error("ERROR");
 
         			   });
-    }
-        
-    });
+     }
+   });
