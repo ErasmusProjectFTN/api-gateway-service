@@ -1,3 +1,4 @@
 .idea
 target
 api-gateway-service.iml
+bower_components
