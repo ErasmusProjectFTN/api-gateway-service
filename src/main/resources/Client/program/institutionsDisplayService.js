@@ -3,8 +3,6 @@ angular.module('wsapp')
 	
 		this.loadInstitutions = function(onSuccess, onError){ 
 		
-			
-			console.log('im here')
 			var req = {
 			    method: 'GET',
 			    url: '/triple-store-service/ects/getInstitutions', 
@@ -12,6 +10,19 @@ angular.module('wsapp')
 			        'Content-Type': 'application/x-www-form-urlencoded'
 			    }
 			}	
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
+		
+		this.loadProgrammes = function(onSuccess, onError){
+			var req = {
+				method: 'GET',
+				url: '/triple-store-service/ects/getProgrammes',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}
 			return $http(req).then(function(response){
 				return response.data;
 			});
