@@ -1,5 +1,5 @@
 angular.module('wsapp')
-.service('institutionsDisplayService', function($http){
+.service('institutionsDisplayService', function($http, $uibModal){
 	
 		this.loadInstitutions = function(onSuccess, onError){ 
 		
