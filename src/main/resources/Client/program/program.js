@@ -30,6 +30,6 @@ angular.module('wsapp')
 				                controller: 'NavbarController'
 				            }
 				   		},
-				   		params: {institutionCode: "abc"}
+				   		params: {institution: null}
 	    });
     });

@@ -10,10 +10,14 @@ angular.module('wsapp')
     	
     	$scope.showInstitution = function(identifier){
     		console.log(identifier)
-    		$state.go('institutionInfo', {institutionCode:identifier});
+    		// get institution information
+    		institutionsDisplayService.loadInstitution(identifier).then(function(response){
+    			console.log(response);
+        		$state.go('institutionInfo', {institution:response});
+    		});
     	}
     })
 	.controller('InstitutionInfoController',function($scope, $stateParams){
-		console.log($stateParams.institutionCode);
-		$scope.institutionCode = $stateParams.institutionCode;
+		console.log($stateParams.institution);
+		$scope.institution = $stateParams.institution;
 	});

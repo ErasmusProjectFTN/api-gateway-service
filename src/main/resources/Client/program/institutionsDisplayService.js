@@ -40,5 +40,20 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
+		
+		this.loadInstitution = function(identifier){ 
+			console.log(identifier);
+			var req = {
+			    method: 'GET',
+			    url: '/triple-store-service/ects/getInstitution', 
+			    headers: {
+			        'Content-Type': 'application/x-www-form-urlencoded'
+			    },
+			    params: {identifier: identifier}
+			}	
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
 	
 });
