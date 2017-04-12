@@ -13,7 +13,7 @@ angular.module('wsapp')
     		// get institution information
     		institutionsDisplayService.loadInstitution(identifier).then(function(response){
     			console.log(response);
-        		$state.go('institutionInfo', {institution:response});
+        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
     		});
     	}
     })

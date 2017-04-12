@@ -42,7 +42,6 @@ angular.module('wsapp')
 		}
 		
 		this.loadInstitution = function(identifier){ 
-			console.log(identifier);
 			var req = {
 			    method: 'GET',
 			    url: '/triple-store-service/ects/getInstitution', 
@@ -51,6 +50,20 @@ angular.module('wsapp')
 			    },
 			    params: {identifier: identifier}
 			}	
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
+		
+		this.loadProgramme = function(identifier){
+			var req = {
+				method: 'GET',
+				url: '/triple-store-service/ects/getProgramme',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				params: {identifier: identifier}
+			}
 			return $http(req).then(function(response){
 				return response.data;
 			});

@@ -31,5 +31,19 @@ angular.module('wsapp')
 				            }
 				   		},
 				   		params: {institution: null}
+	    })
+	    .state('degreeProgrammeInfo',{
+	    				url: '/degreeProgrammeInfo',
+				   		views: {
+				            'content': {
+				                templateUrl: 'program/degree_programme_info.html',
+				                controller: 'DegreeProgrammeInfoController'
+				            },
+				            'navbar':{
+				                templateUrl: 'navbar/navbar.html',
+				                controller: 'NavbarController'
+				            }
+				   		},
+				   		params: {degreeProgramme: null}
 	    });
     });
