@@ -45,5 +45,19 @@ angular.module('wsapp')
 				            }
 				   		},
 				   		params: {degreeProgramme: null}
-	    });
+	    })
+	    .state('courseInfo',{
+			url: '/courseInfo',
+	   		views: {
+	            'content': {
+	                templateUrl: 'program/course_info.html',
+	                controller: 'CourseInfoController'
+	            },
+	            'navbar':{
+	                templateUrl: 'navbar/navbar.html',
+	                controller: 'NavbarController'
+	            }
+	   		},
+	   		params: {course: null}
+});
     });

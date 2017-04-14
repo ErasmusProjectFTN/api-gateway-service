@@ -9,7 +9,7 @@ angular.module('wsapp')
         
         $scope.showDegreeProgramme = function(identifier){
     		console.log(identifier)
-    		// get institution information
+    		// get programme information
     		institutionsDisplayService.loadProgramme(identifier).then(function(response){
     			console.log(response);
         		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
