@@ -3,8 +3,12 @@
 angular.module('wsapp')
     .controller('InstitutionsDisplayController', function ($scope, $state, $location, institutionsDisplayService) {
            	
+    	$scope.institutions = [];
+    	
     	institutionsDisplayService.loadInstitutions().then(function(response){
-    		$scope.institutions = response;
+    		$scope.institutions.lenght = 0;
+    		angular.extend($scope.institutions, response);
+    		console.log('loading institutions...');
     	});
     	
     	
@@ -13,8 +17,19 @@ angular.module('wsapp')
     		// get institution information
     		institutionsDisplayService.loadInstitution(identifier).then(function(response){
     			console.log(response);
-        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+        		$state.go('institutionInfo', {institution:response});
     		});
+    	}
+    	
+    	$scope.search = function(institution){
+    		institutionsDisplayService.searchInstitutions(institution).then(function(response){
+    			$scope.institutions.length = 0;
+    			angular.extend($scope.institutions, response);
+    			console.log('changing instutitions...');
+    			if(!$scope.$$phase) {
+                    $scope.$apply();
+    			}
+    		})
     	}
     })
 	.controller('InstitutionInfoController',function($scope, $stateParams){

@@ -1,11 +1,91 @@
-<div>
+<div ng-controller="InstitutionsDisplayController">
 	<table class='table table-borderless'>
 		<tr>
 			<td class="col-md-3">
-				<div ng-include="'program/institutions_search.html'"></div>
+				<div>
+					<div>
+						<form class="form-vertical">
+					    <div class="table-responsive">
+					        <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+					            <tbody>
+					                <tr>
+					                    <td><input type="text" ng-model="institution.id" class="form-control" placeholder="Institution ID"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input type="text" ng-model="institution.name" class="form-control" placeholder="Institution name"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input type="text" ng-model="institution.status" class="form-control" placeholder="Institution status"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input type="text" ng-model="institution.type" class="form-control" placeholder="Institution type"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input type="text" ng-model="institution.location" class="form-control" placeholder="Institution location"/></td>
+					                </tr>
+					                <tr>
+					                	<td><button type="submit" class="btn btn-primary pull-right" ng-click=search(institution)>Search</button></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					    </div>
+					</form>
+					</div>
+				</div>
 			</td>
 			<td class="col-md-9">
-				<div ng-include="'program/institutions_display.html'"></div>
+				<div>
+					<div>
+						<table class="table">
+						  <tr ng-repeat="institution in institutions" >
+						    <td>
+						    	<table class="table table-borderless">
+						    		<thead>
+						    			<tr><h4 style="cursor:pointer" ng-click="showInstitution(institution.identifier)">{{institution.identifier}} - {{institution.institutionName}}</h4></tr>
+						    		</thead>
+						    		<tbody>
+						    			<tr>
+						    				<th>
+						    					Institution status:
+						    				</th>
+						    				<td>
+						    					{{institution.institutionStatus}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Institution type:
+						    				</th>
+						    				<td>
+						    					{{institution.institutionType}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Location:
+						    				</th>
+						    				<td>
+						    					{{institution.institutionAddress}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Url:
+						    				</th>
+						    				<td>
+						    					<a href='{{institution.url}}'>{{institution.url}}</a>
+						    				</td>
+						    			</tr>
+						    		</tbody>
+						    	</table>
+						    </td>
+						  </tr>
+						</table>
+					</div>
+				</div>
 			</td>
 		</tr>
 	</table>
