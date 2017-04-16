@@ -74,6 +74,20 @@ angular.module('wsapp')
 			});
 		}
 		
+		this.searchProgrammes = function(programme){
+			var req = {
+					method: 'GET',
+					url: '/triple-store-service/ects/searchProgrammes', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {programme: programme}
+				}
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
+		
 		// courses 
 		this.loadCourses = function(onSuccess, onError){
 			var req = {

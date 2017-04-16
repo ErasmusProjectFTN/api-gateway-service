@@ -1,11 +1,122 @@
-<div>
+<div ng-controller="DegreeProgrammesDisplayController">
 	<table class='table table-borderless'>
 		<tr>
 			<td class="col-md-3">
-				<div ng-include="'program/degree_programmes_search.html'"></div>
+				<div>
+					<div>
+						<form class="form-vertical">
+					    <div class="table-responsive">
+					        <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+					            <tbody>
+					                <tr>
+					                    <td><input ng-model="programme.id" type="text" class="form-control" placeholder="Programme ID"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.title"  type="text" class="form-control" placeholder="Programme title"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.containsCourse"  type="text" class="form-control" placeholder="Contains course ..."/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.qualification"  type="text" class="form-control" placeholder="Qualification"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.location"  type="text" class="form-control" placeholder="Location"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.credits"  type="number" step=0.1 class="form-control" placeholder="Credits"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input ng-model="programme.language"  type="text" class="form-control" placeholder="Language of instruction"/></td>
+					                </tr>
+					                <tr>
+					                    <td>
+					                    <div class="dropdown">
+					                    	<select name="repeatSelect" id="repeatSelect" ng-model="programme.prerequisite" class="form-control">
+										      <option value="High School" selected="selected">High School</option>
+										      <option value="BSc">BSc</option>
+										      <option value="MSc">MSc</option>
+										      <option value="PhD">PhD</option>
+										    </select>
+										  </div>
+					                    </td>
+					                </tr>
+					                <tr>
+					                    <td><input  ng-model="programme.duration" type="number" class="form-control" placeholder="Duration (in semesters)"/></td>
+					                </tr>
+					                <tr>
+					                    <td><input  ng-model="programme.cost" type="number" step=0.1 class="form-control" placeholder="Cost"/></td>
+					                </tr>
+					                <tr>
+					                	<td><button type="submit" class="btn btn-primary pull-right" ng-click="searchProgramme(programme)">Search</button></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					    </div>
+					</form>
+					</div>
+				</div>
 			</td>
 			<td class="col-md-9">
-				<div ng-include="'program/degree_programmes_display.html'"></div>
+				<div>
+					<div>
+						<table class="table">
+						  <tr ng-repeat="programme in programmes">
+						    <td>
+						    	<table class="table table-borderless">
+						    		<thead>
+						    			<tr><h4 style="cursor:pointer" ng-click="showDegreeProgramme(programme.degreeUnitCode)">{{programme.degreeUnitCode}} - {{programme.degreeProgrammeTitle}}</h4></tr>
+						    		</thead>
+						    		<tbody>
+						    			<tr>
+						    				<th>
+						    					Language of instruction:
+						    				</th>
+						    				<td>
+						    					{{programme.language}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Location:
+						    				</th>
+						    				<td>
+						    					{{programme.location}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Qualification:
+						    				</th>
+						    				<td>
+						    					{{programme.qualification}}
+						    				</td>
+						    			</tr>
+						    			<tr>
+						    				<th>
+						    					Credits:
+						    				</th>
+						    				<td>
+						    					{{programme.credit}}
+						    				</td>
+						    			</tr>
+						    			<tr>
+						    				<th>
+						    					Url:
+						    				</th>
+						    				<td>
+						    					<a href='{{programme.url}}'>{{programme.url}}</a>
+						    				</td>
+						    			</tr>
+						    		</tbody>
+						    	</table>
+						    </td>
+						  </tr>
+						</table>
+					</div>
+				</div>
 			</td>
 		</tr>
 	</table>
