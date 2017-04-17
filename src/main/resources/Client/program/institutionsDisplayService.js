@@ -115,5 +115,19 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
+
+                this.searchCourses = function(course){
+			var req = {
+					method: 'GET',
+					url: '/triple-store-service/ects/searchCourses', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {course: course}
+				}
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
 	
 });

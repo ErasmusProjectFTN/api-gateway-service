@@ -26,7 +26,7 @@ angular.module('wsapp')
     			angular.extend($scope.programmes, response);
     			console.log('changing programmes...');
     			if(!$scope.$$phase) {
-                    $scope.$apply();
+                            $scope.$apply();
     			}
     		})
         	

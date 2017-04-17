@@ -1,12 +1,112 @@
-<div>
-	<table class='table table-borderless'>
-		<tr>
-			<td class="col-md-3">
-				<div ng-include="'program/courses_search.html'"></div>
-			</td>
-			<td class="col-md-9">
-				<div ng-include="'program/courses_display.html'"></div>
-			</td>
-		</tr>
-	</table>
+<div ng-controller="CoursesDisplayController">
+    <table class='table table-borderless'>
+        <tr>
+            <td class="col-md-3">
+                <div>
+                    <div>
+                        <form class="form-vertical">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+                                    <tbody>
+                                        <tr>
+                                            <td><input ng-model="course.id" type="text" class="form-control" placeholder="Course ID"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="course.title"  type="text" class="form-control" placeholder="Course title"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="course.type" type="text" class="form-control" placeholder="Course type"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="course.unitLevel"  type="text" class="form-control" placeholder="Course unit level"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="course.yearOfStudy"  type="number" class="form-control" placeholder="Year of study"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="course.credits" type="text" class="form-control" placeholder="Credits"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="course.language" type="text" class="form-control" placeholder="Language of instruction"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <select name="repeatSelect" id="repeatSelect" ng-model="course.termPattern" class="form-control">
+                                                        <option value="semester" selected="selected">Semester</option>
+                                                        <option value="trimester">Trimester</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="course.duration" type="number" class="form-control" placeholder="Duration (in semesters)"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="course.cost" type="number" step="0.1" class="form-control" placeholder="Cost"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button ng-click="search(course)" type="submit" class="btn btn-primary pull-right">Search</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td class="col-md-9">
+                <div>
+                    <div>
+                        <table class="table">
+                            <tr ng-repeat="course in courses">
+                                <td>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr><h4 style="cursor:pointer" ng-click="showCourse(course.courseUnitCode)">{{course.courseUnitCode}} - {{course.courseUnitTitle}}</h4></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    Course unit type:
+                                                </th>
+                                                <td>
+                                                    {{course.courseUnitType}}
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>
+                                                    Course unit level:
+                                                </th>
+                                                <td>
+                                                    {{course.courseUnitLevel}}
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>
+                                                    Credits:
+                                                </th>
+                                                <td>
+                                                    {{course.credit}}
+                                                </td>
+                                            </tr>
+                                        <th>
+                                            Url:
+                                        </th>
+                                        <td>
+                                            <a href='{{course.url}}'>{{course.url}}</a>
+                                        </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                        </td>
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
