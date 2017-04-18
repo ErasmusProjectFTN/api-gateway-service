@@ -83,7 +83,7 @@ angular.module('wsapp')
 
 		var req = {
 		    method: 'POST',
-		    url: '/triple-store-service/ects/addCourseSpecification',
+		    url: '/triple-store-service/ects/addCourseUnit',
 			headers: {
 		        'Content-Type': 'application/x-www-form-urlencoded'
 		    },
