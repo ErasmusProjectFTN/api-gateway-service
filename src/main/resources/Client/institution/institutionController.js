@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('InstitutionController', function ($scope, institutionService, $location) {
+    .controller('InstitutionController', function ($scope, institutionService, $location, $state) {
         
         $scope.institution = function(){
             institutionService.insertInstitution($scope.data,
@@ -9,7 +9,7 @@ angular.module('wsapp')
 
         				   console.log(response.data);
         				   //if(response.data.success==true){
-        				   	alertify.success("WELCOME!");
+        				   	alertify.success("SUCCESS");
         				   	$state.go('home');
         				   //}else{
         				   	//alertify.error("ERROR");

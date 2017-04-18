@@ -49,7 +49,7 @@ angular.module('wsapp')
 
 		var req = {
 		    method: 'POST',
-		    url: '/triple-store-service/ects/addProgrammeSpecification',
+		    url: '/triple-store-service/ects/addDegreeProgramme',
 			headers: {
 		        'Content-Type': 'application/x-www-form-urlencoded'
 		    },
@@ -62,34 +62,17 @@ angular.module('wsapp')
 				credit : data.credit,
 				degreeProgrammeAccessToFurtherStudies : data.degreeprogrammeaccesstofurtherstudies,
 				degreeProgrammeEducationalAndProfessionalGoals : data.degreeprogrammeeducationalandprofessionalgoals,
-				degreeProgrammeStructureDiagram : data.degreeprogrammestructurediagram
-		    })
-		}	
-
-		$http(req).then(onSuccess, onError);
-
-    },
-	insertDegreeInstance: function(onSuccess, onError){ 
-
-		var req = {
-		    method: 'POST',
-		    url: '/triple-store-service/ects/addProgrammeInstance',
-			headers: {
-		        'Content-Type': 'application/x-www-form-urlencoded'
-		    },
-		    data: $.param({ 
-		    	degreeUnitCode : data.degreeunitcode,
+				degreeProgrammeStructureDiagram : data.degreeprogrammestructurediagram,
 				prerequisite : data.prerequisite,
 				departmentalEctsCoordinator : data.departmentalectscoordinator,
 				degreeProgrammeFinalExamination : data.degreeprogrammefinalexaminaton,
-				location : data.location,
-				url : data.url,
 				places : data.places,
 				languageOfInstruction : data.languageofinstruction,
 				degreeProgrammeExaminationAndAssessmentRegulations : data.degreeprogrammeexaminationandassessmentregulations,
 				start : data.start,
 				duration : data.duration,
 				cost : data.cost
+		    
 		    })
 		}	
 
@@ -114,28 +97,9 @@ angular.module('wsapp')
 				credit : data.credit,
 				courseUnitContent : data.courseunitcontent,
 				courseLocation : data.location,
-				qualification : data.qualification
-		    })
-		}	
-
-		$http(req).then(onSuccess, onError);
-
-    },
-	insertCourseInstance: function(data,onSuccess, onError){ 
-
-		var req = {
-		    method: 'POST',
-		    url: '/triple-store-service/ects/addCourseInstance',
-			headers: {
-		        'Content-Type': 'application/x-www-form-urlencoded'
-		    },
-		    data: $.param({ 
-		    	courseUnitCode : data.courseunitcode,
 				lecturer : data.lecturer,
 				languageOfInstruction : data.languageofinstruction,
 				places : data.places,
-				courseUnitType : data.courseunittype,
-				url : data.url,
 				courseUnitTermPattern : data.selectedOption,
 				courseUnitCompetence : data.courseunitcompetence,
 				courseUnitLearningOutcome : data.courseunitlearningoutcome,
@@ -143,7 +107,6 @@ angular.module('wsapp')
 				courseUnitRecommendedReading : data.courseunitrecommendedreading,
 				courseUnitTeachingMethods : data.courseunitteachingmethods,
 				courseUnitAssessmentMethods : data.courseunitassessmentmethods,
-				location : data.location,
 				start : data.start,
 				duration : data.duration,
 				cost : data.cost

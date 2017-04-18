@@ -1,8 +1,14 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('CourseUnitController', function ($scope, institutionService, $location) {
+    .controller('CourseUnitController', function ($scope, institutionService, $location, $state) {
         
+    	 $scope.data = {}
+         $scope.data.selectedOption = "2";
+         $scope.data.availableOptions = [ {name : "- Select -", id : "1"}, {name : "Semestar", id : "2"},{ name : "Trimestar", id : "3"}];
+
+    	
+    	
         $scope.courseunit = function(){
             //TODO call method from service
         				   	alertify.success("Test");

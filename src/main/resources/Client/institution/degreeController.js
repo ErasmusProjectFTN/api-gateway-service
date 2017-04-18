@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('DegreeController', function ($scope, institutionService, $location) {
+    .controller('DegreeController', function ($scope, institutionService, $location, $state) {
         
         $scope.degree = function(){
             institutionService.insertDegree($scope.data,
