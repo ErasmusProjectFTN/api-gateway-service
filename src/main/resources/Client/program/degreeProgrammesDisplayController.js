@@ -32,7 +32,16 @@ angular.module('wsapp')
         	
         }
     })
-    .controller('DegreeProgrammeInfoController',function($scope, $stateParams){
+    .controller('DegreeProgrammeInfoController',function($scope, $stateParams, $location, institutionsDisplayService, $state){
 		console.log($stateParams.degreeProgramme);
 		$scope.degreeProgramme = $stateParams.degreeProgramme;
+		
+		 $scope.showDegreeProgramme = function(identifier){
+	    		console.log(identifier)
+	    		// get programme information
+	    		institutionsDisplayService.loadProgramme(identifier).then(function(response){
+	    			console.log(response);
+	        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+	    		});
+	    	}
 	});
