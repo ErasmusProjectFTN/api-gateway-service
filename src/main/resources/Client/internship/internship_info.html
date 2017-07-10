@@ -1,0 +1,35 @@
+<div ng-controller = 'InternshipInfoController'>
+	<table class="table">
+		<tr>
+			<td>Internship code</td>
+			<td>{{internship.internshipCode}}</td>
+		</tr>
+		<tr>
+			<td>Internship title</td>
+			<td>{{internship.internshipTitle}}</td>
+		</tr>
+		<tr>
+			<td>Internship description</td>
+			<td>{{internship.internshipDescription}}</td>
+		</tr>
+		<tr>
+			<td>Internship position title</td>
+			<td>{{internship.internshipPositionTitle}}</td>
+		</tr>
+		<tr>
+			<td>Company:</td><td style="cursor:pointer" ng-click="goCompany(company.companyCode)">{{company.companyName}}</td>
+		</tr>
+		<tr><td>Knowledge domains:</td></tr>
+        <tr ng-repeat="know in internship.knowledge">
+        	<td style="cursor:pointer" ng-click="showKnowledge(know.code)">{{know.name}}</td>
+        </tr>
+        <tr>
+        	<td>Add Knowledge:</td>
+        	<td><select ng-model="selectedKnowledge" class="form-control">
+        	 <option ng-repeat="x in knowledge" value="{{x.code}}">{{x.name}}</option>
+        	 </select>
+        	<td><button class="btn btn-primary" ng-click="addKnowledge(internship.internshipCode)">Add</button>
+        </tr>
+		</table>
+		
+</div>

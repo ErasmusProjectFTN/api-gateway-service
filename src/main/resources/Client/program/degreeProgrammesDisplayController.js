@@ -14,8 +14,13 @@ angular.module('wsapp')
     		console.log(identifier)
     		// get programme information
     		institutionsDisplayService.loadProgramme(identifier).then(function(response){
-    			console.log(response);
-        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+    			//console.log(response);
+    			institutionsDisplayService.loadInternshipRecommendations(identifier).then(function(response2){
+    				console.log(response2);
+    				response.internships=response2;
+        			console.log(response);
+            		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+    			})
     		});
     	}
         
@@ -32,16 +37,28 @@ angular.module('wsapp')
         	
         }
     })
-    .controller('DegreeProgrammeInfoController',function($scope, $stateParams, $location, institutionsDisplayService, $state){
+    .controller('DegreeProgrammeInfoController',function($scope, $stateParams, $location, institutionsDisplayService,internshipDisplayService, $state){
 		console.log($stateParams.degreeProgramme);
 		$scope.degreeProgramme = $stateParams.degreeProgramme;
-		
+		$scope.showInternship = function(identifier){
+    		console.log(identifier)
+    		//get course information
+    		internshipDisplayService.loadInternship(identifier).then(function(response){
+    			console.log(response);
+        		$state.go('internshipInfo', {internship:response});
+    		});
+    	}
 		 $scope.showDegreeProgramme = function(identifier){
 	    		console.log(identifier)
 	    		// get programme information
 	    		institutionsDisplayService.loadProgramme(identifier).then(function(response){
-	    			console.log(response);
-	        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+	        			//console.log(response);
+	        			institutionsDisplayService.loadInternshipRecommendations(identifier).then(function(response2){
+	        				console.log(response2);
+	        				response.internships=response2;
+	    	    			console.log(response);
+	    	        		$state.go('degreeProgrammeInfo', {degreeProgramme:response});
+	        			})
 	    		});
 	    	}
 	});

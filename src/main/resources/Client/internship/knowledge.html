@@ -1,0 +1,78 @@
+<div ng-controller="KnowledgeDisplayController">
+    <table class='table table-borderless'>
+        <tr>
+            <td class="col-md-3">
+                <div>
+                    <div>
+                        <form class="form-vertical">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+                                    <tbody>
+                                        <tr>
+                                            <td><input ng-model="knowledge.code" type="text" class="form-control" placeholder="ID"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="knowledge.name"  type="text" class="form-control" placeholder="Name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.description" type="text" class="form-control" placeholder="Description"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.lab" type="text" class="form-control" placeholder="LaboratoryRequirements"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.contr" type="text" class="form-control" placeholder="NotableContributors"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.lit" type="text" class="form-control" placeholder="NotableLiterature"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.app" type="text" class="form-control" placeholder="PracticalApplications"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="knowledge.cred" type="text" class="form-control" placeholder="RequiredTeachingCredentials"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button ng-click="search(knowledge)" type="submit" class="btn btn-primary pull-right">Search</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td class="col-md-9">
+                <div>
+                    <div>
+                        <table class="table">
+                            <tr ng-repeat="knowledge in knowledges">
+                                <td>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr><h4 style="cursor:pointer" ng-click="showKnowledge(knowledge.code)">{{knowledge.code}} - {{knowledge.name}}</h4></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    Notable Literature:
+                                                </th>
+                                                <td>
+                                                    {{knowledge.notableLiterature}}
+                                                </td>
+                                            </tr>
+
+
+                                            
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                        </td>
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

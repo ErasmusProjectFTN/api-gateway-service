@@ -1,0 +1,28 @@
+<div ng-controller = 'CompanyInfoController'>
+	<table class="table">
+		<tr>
+			<td>Company code</td>
+			<td>{{company.companyCode}}</td>
+		</tr>
+		<tr>
+			<td>Company name</td>
+			<td>{{company.companyName}}</td>
+		</tr>
+		<tr>
+			<td>Company description</td>
+			<td>{{company.companyDescription}}</td>
+		</tr>
+		<tr>
+			<td>Company address</td>
+			<td>{{company.companyAddress}}</td>
+		</tr>
+		<tr>
+			<td>Company website</td>
+			<td>{{company.companyWebsite}}</td>
+		</tr>
+		<tr><td>Internships:</td></tr>
+        <tr ng-repeat="know in company.internships">
+        	<td style="cursor:pointer" ng-click="showInternship(know.internshipCode)">{{know.internshipTitle}}</td>
+        </tr>
+		</table>
+</div>

@@ -73,7 +73,19 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
-		
+		this.loadInternshipRecommendations=function(identifier){
+			var req = {
+					method: 'GET',
+					url: '/internship-triple-store-service/internship/getRecommendation',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {identifier: identifier}
+				}
+			return $http(req).then(function(response){
+				return response.data;
+			});
+		}
 		this.searchProgrammes = function(programme){
 			var req = {
 					method: 'GET',

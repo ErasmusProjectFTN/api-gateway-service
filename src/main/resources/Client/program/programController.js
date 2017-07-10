@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('ProgramController', function ($scope, programService, $location) {
+    .controller('ProgramController', function ($scope, $location) {
         
-        $scope.program = function(){
+        $scope.internship = function(){
         				   	alertify.success("Test");
         }
 });

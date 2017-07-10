@@ -1,0 +1,48 @@
+<div ng-controller="KnowledgeAddController">
+<div class="col-md-3 col-md-offset-3" style="width:60%;" >
+    <h3>Knowledge</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Identifier*: </span>
+    <input type="text" class="form-control" required placeholder="Enter Identifier for knowledge" ng-model="data.identifier"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge name*: </span>
+    <input type="text" class="form-control" required placeholder="Enter knowledge name*: " ng-model="data.knowledgeName"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge description: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter knowledge description" ng-model="data.knowledgeDescription">
+    </textarea>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge laboratory requirements: </span>
+    <input type="text" class="form-control" required placeholder="Enter laboratory requirements" ng-model="data.lab"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge notable contributors: </span>
+    <input type="text" class="form-control" required placeholder="Enter notable contributors " ng-model="data.notableContributors"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge notable literature : </span>
+    <input type="text" class="form-control" required placeholder="Enter notable literature " ng-model="data.notableLiterature"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge practical applications : </span>
+    <input type="text" class="form-control" required placeholder="Enter practical applications " ng-model="data.practicalApplications"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Knowledge required teaching credentials  : </span>
+    <input type="text" class="form-control" required placeholder="Enter required teaching credentials" ng-model="data.requiredTeachingCredentials"/>
+  </div>
+<div class="col-md-4 col-md-offset-4">
+  <button class="btn btn-primary" type="button" ng-click="know()">
+    Next
+  </button>
+
+</div>
+</div>
+</div>

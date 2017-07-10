@@ -1,0 +1,77 @@
+<div ng-controller="CompanyDisplayController">
+    <table class='table table-borderless'>
+        <tr>
+            <td class="col-md-3">
+                <div>
+                    <div>
+                        <form class="form-vertical">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+                                    <tbody>
+                                        <tr>
+                                            <td><input ng-model="company.companyCode" type="text" class="form-control" placeholder="ID"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="company.companyName"  type="text" class="form-control" placeholder="Name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="company.companyDescription" type="text" class="form-control" placeholder="Description"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="company.companyAddress" type="text" class="form-control" placeholder="Address"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="company.companyWebsite" type="text" class="form-control" placeholder="Website"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button ng-click="search(company)" type="submit" class="btn btn-primary pull-right">Search</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td class="col-md-9">
+                <div>
+                    <div>
+                        <table class="table">
+                            <tr ng-repeat="company in companies">
+                                <td>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr><h4 style="cursor:pointer" ng-click="showCompany(company.companyCode)">{{company.companyCode}} - {{company.companyName}}</h4></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    Company Address:
+                                                </th>
+                                                <td>
+                                                    {{company.companyAddress}}
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>
+                                                    Company Website:
+                                                </th>
+                                                <td>
+                                                    {{company.companyWebsite}}
+                                                </td>
+                                            </tr>
+
+                                            
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                        </td>
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

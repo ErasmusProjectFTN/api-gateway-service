@@ -1,0 +1,48 @@
+<div ng-controller = 'KnowledgeInfoController'>
+	<table class="table">
+		<tr>
+			<td>Knowledge code</td>
+			<td>{{knowledge.code}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge name</td>
+			<td>{{knowledge.name}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge description</td>
+			<td>{{knowledge.description}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge Notable Literature</td>
+			<td>{{knowledge.notableLiterature}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge Laboratory Requirements</td>
+			<td>{{knowledge.laboratoryRequirements}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge Notable Contributors</td>
+			<td>{{knowledge.notableContributors}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge Practical Applications</td>
+			<td>{{knowledge.practicalApplications}}</td>
+		</tr>
+		<tr>
+			<td>Knowledge Required Teaching Credentials</td>
+			<td>{{knowledge.requiredTeachingCredentials}}</td>
+		</tr>
+		<tr><td>Knowledge domains:</td></tr>
+        <tr ng-repeat="know in internship.knowledge">
+        	<td style="cursor:pointer" ng-click="showKnowledge(know.code)">{{know.name}}</td>
+        </tr>
+        <tr>
+        	<td>Link knowledges:</td>
+        	<td><select ng-model="selectedKnowledge" class="form-control">
+        	 <option ng-repeat="x in knowledges" value="{{x.code}}">{{x.name}}</option>
+        	 </select>
+        	<td><button class="btn btn-primary" ng-click="dependKnowledge(knowledge.code)">depends on</button>
+        	<td><button class="btn btn-primary" ng-click="parentKnowledge(knowledge.code)">contained in</button>
+        </tr>
+		</table>
+</div>

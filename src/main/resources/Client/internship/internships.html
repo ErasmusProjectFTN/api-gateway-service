@@ -1,0 +1,91 @@
+<div ng-controller="InternshipDisplayController">
+    <table class='table table-borderless'>
+        <tr>
+            <td class="col-md-3">
+                <div>
+                    <div>
+                        <form class="form-vertical">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-highlight" style="width: auto;">
+                                    <tbody>
+                                        <tr>
+                                            <td><input ng-model="internship.internshipCode" type="text" class="form-control" placeholder="ID"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input ng-model="internship.internshipTitle"  type="text" class="form-control" placeholder="Title"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="internship.internshipDescription" type="text" class="form-control" placeholder="Description"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input  ng-model="internship.internshipPositionTitle" type="text" class="form-control" placeholder="Position title"/></td>
+                                        </tr>
+                                        <tr>
+                                        	<td>
+											  	<select ng-model="selectedProgramme" class="form-control">
+											    	<option ng-repeat="x in programmes" value="{{x.degreeUnitCode}}">{{x.degreeProgrammeTitle}}</option>
+											    </select>
+											</td>
+										</tr>
+                                         <tr>
+                                            <td>
+                                        		 <multiselect-dropdown model=" courseModel " options="courseData "></multiselect-dropdown>
+                                        	</td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                        		 <multiselect-dropdown model=" knowledgeModel " options="knowledgeData "></multiselect-dropdown>
+                                        	</td>
+                                        </tr>
+                                        <tr>
+                                            <td><button ng-click="search(internship)" type="submit" class="btn btn-primary pull-right">Search</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+            <td class="col-md-9">
+                <div>
+                    <div>
+                        <table class="table">
+                            <tr ng-repeat="internship in internships">
+                                <td>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr><h4 style="cursor:pointer" ng-click="showInternship(internship.internshipCode)">{{internship.internshipCode}} - {{internship.internshipTitle}}</h4></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    internship Position Title:
+                                                </th>
+                                                <td>
+                                                    {{internship.internshipPositionTitle}}
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>
+                                                    internship Description:
+                                                </th>
+                                                <td>
+                                                    {{internship.internshipDescription}}
+                                                </td>
+                                            </tr>
+
+                                            
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                        </td>
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
