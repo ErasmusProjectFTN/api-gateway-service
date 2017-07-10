@@ -46,8 +46,10 @@ angular.module('wsapp')
 		$http(req).then(onSuccess, onError);
 
         },
-		personalisation: function(surname,name,dateOfBirth,countryofBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
+		personalisation: function(surname,name,dateOfBirth,countryOfBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
 		
+			
+			
 		var req = {
 		    method: 'POST',
 		    url: '/triple-store-service/student/add',
@@ -57,8 +59,8 @@ angular.module('wsapp')
 		    data: $.param({ 
 		    	surname: surname,
 		    	name : name,
-				dateOfBirth : dateOfBirth,
-				countryofBirth : countryofBirth,
+				dateOfBirth : dateOfBirth.toString(),
+				countryOfBirth : countryOfBirth,
 				placeOfBirth : placeOfBirth,
 				gender : gender,
 				nationality : nationality,
