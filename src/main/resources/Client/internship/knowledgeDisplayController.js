@@ -34,13 +34,24 @@ angular.module('wsapp')
         }
         
     })
-    .controller('KnowledgeInfoController',function($scope,knowledgeDisplayService, $stateParams,$state){
+    .controller('KnowledgeInfoController',function($scope,knowledgeDisplayService,institutionsDisplayService, $stateParams,$state){
 		console.log($stateParams.knowledge);
 		$scope.selectedKnowledge="";
+		$scope.selectedCourse="";
+		$scope.courses=[];
+
+		institutionsDisplayService.loadCourses().then(function(response){
+			$scope.courses=response;
+		})
 		knowledgeDisplayService.loadKnowledges().then(function(response){
 			$scope.knowledges=response;
 		})
-
+		$scope.addToCourse = function(){
+			knowledgeDisplayService.addToCourse($scope.knowledge.code,$scope.selectedCourse).then(function(response){
+    			console.log(response);
+        		$state.go('home');
+    		});
+		}
 		$scope.dependKnowledge = function(identifier){
 			console.log($scope.selectedKnowledge);
     		knowledgeDisplayService.dependKnowledge(identifier,$scope.selectedKnowledge).then(function(response){

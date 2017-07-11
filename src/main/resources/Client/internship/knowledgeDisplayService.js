@@ -57,6 +57,23 @@ angular.module('wsapp')
 				return response;
 			});
 		}
+
+		this.addToCourse= function(knowledge,course){
+			var req = {
+					method: 'POST',
+					url: '/internship-triple-store-service/knowledge/addToCourse', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					data: $.param({ 
+						parentCourse: course,
+						Knowledge: knowledge
+							})
+				}
+			return $http(req).then(function(response){
+				return response;
+			});
+		}
 		this.dependKnowledge= function(parentKnowledge,sonKnowledge){
 			var req = {
 					method: 'POST',

@@ -44,5 +44,13 @@
         	<td><button class="btn btn-primary" ng-click="dependKnowledge(knowledge.code)">depends on</button>
         	<td><button class="btn btn-primary" ng-click="parentKnowledge(knowledge.code)">contained in</button>
         </tr>
+        
+        <tr>
+        	<td>add to course:</td>
+        	<td><select ng-model="selectedCourse" class="form-control">
+        	 <option ng-repeat="x in courses" value="{{x.courseUnitCode}}">{{x.courseUnitTitle}}</option>
+        	 </select>
+        	<td><button class="btn btn-primary" ng-click="addToCourse()">add</button>
+        </tr>
 		</table>
 </div>
