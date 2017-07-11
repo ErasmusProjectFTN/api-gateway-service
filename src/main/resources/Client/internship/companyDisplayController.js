@@ -33,9 +33,15 @@ angular.module('wsapp')
         }
         
     })
-    .controller('CompanyInfoController',function($scope,internshipDisplayService,$state, $stateParams){
+    .controller('CompanyInfoController',function($scope,internshipDisplayService,companyDisplayService,$state, $stateParams){
 		console.log($stateParams.company);
 		$scope.company = $stateParams.company;
+		$scope.deleteCompany= function(identifier){
+			companyDisplayService.deleteCompany(identifier).then(function(response){
+    			console.log(response);
+        		$state.go('home');
+    		});
+    	}
 		$scope.showInternship = function(identifier){
     		console.log(identifier)
     		//get course information

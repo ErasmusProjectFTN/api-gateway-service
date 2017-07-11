@@ -27,7 +27,19 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
-
+		this.deleteInternship = function(institution){
+			var req = {
+					method: 'DELETE',
+					url: '/internship-triple-store-service/internship/removeInternship', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {InternshipCode: institution}
+				}
+			return $http(req).then(function(response){
+				return response;
+			});
+		}
 		this.searchInternship = function(institution){
 			var req = {
 					method: 'GET',

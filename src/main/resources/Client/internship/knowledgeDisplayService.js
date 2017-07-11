@@ -28,6 +28,19 @@ angular.module('wsapp')
 			});
 		}
 
+		this.deleteKnowledge= function(code){
+			var req = {
+					method: 'DELETE',
+					url: '/internship-triple-store-service/knowledge/removeKnowledge', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {Code: code}
+				}
+			return $http(req).then(function(response){
+				return response;
+			});
+		}
 		this.searchKnowledge= function(institution){
 			var req = {
 					method: 'GET',

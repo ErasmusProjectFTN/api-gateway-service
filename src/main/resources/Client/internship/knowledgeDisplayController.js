@@ -52,6 +52,14 @@ angular.module('wsapp')
         		$state.go('home');
     		});
 		}
+
+		$scope.deleteKnowledge = function(identifier){
+			console.log($scope.selectedKnowledge);
+    		knowledgeDisplayService.deleteKnowledge(identifier).then(function(response){
+    			console.log(response);
+        		$state.go('home');
+    		});
+    	}
 		$scope.dependKnowledge = function(identifier){
 			console.log($scope.selectedKnowledge);
     		knowledgeDisplayService.dependKnowledge(identifier,$scope.selectedKnowledge).then(function(response){

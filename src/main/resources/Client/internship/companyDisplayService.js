@@ -14,7 +14,19 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
-		
+		this.deleteCompany= function(institution){
+			var req = {
+					method: 'DELETE',
+					url: '/internship-triple-store-service/company/removeCompany', 
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					params: {CompanyCode: institution}
+				}
+			return $http(req).then(function(response){
+				return response;
+			});
+		}
 
 		this.searchCompany= function(institution){
 			var req = {

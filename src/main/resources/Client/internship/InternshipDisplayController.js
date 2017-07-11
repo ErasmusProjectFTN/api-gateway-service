@@ -85,6 +85,13 @@ angular.module('wsapp')
         		$state.go('home');
     		});
     	}
+		$scope.deleteInternship= function(identifier){
+			console.log($scope.selectedKnowledge);
+			internshipDisplayService.deleteInternship(identifier).then(function(response){
+    			console.log(response);
+        		$state.go('home');
+    		});
+    	}
 
 		$scope.goCompany = function(identifier){
     		console.log(identifier)
