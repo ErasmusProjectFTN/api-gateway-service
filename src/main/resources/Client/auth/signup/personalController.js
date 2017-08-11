@@ -205,23 +205,37 @@ angular.module('wsapp')
 	$scope.personalization = function(){
 		//alertify.success("next");
 
-		authService.personalisation($scope.data.familyname,$scope.data.givenname,$scope.data.dateofbirth,$scope.data.countryofbirth,$scope.data.placeofbirth,$scope.data.selectedOption,$scope.data.nationality1,$scope.street,$scope.postalcode,$scope.city,$scope.country,$scope.telephone,$scope.mail,
+		authService.personalisation(
+				$scope.data.familyname,
+				$scope.data.givenname,
+				$scope.data.dateofbirth,
+				$scope.data.countryofbirth,
+				$scope.data.placeofbirth,
+				$scope.data.selectedOption, //for gender
+				$scope.data.nationality1,
+				$scope.data.street,
+				$scope.data.postalcode,
+				$scope.data.city,
+				$scope.data.country,
+				$scope.data.telephone,
+				$scope.data.email,
+				$scope.data.password,
+				$scope.data.passwordConfirmation,
 				function(response){
+					console.log(response.data);
+					//if(response.data.success==true){
+					alertify.success("Success!");
+					$state.go('program');
+					//}else{
+					//alertify.error("ERROR");
+					//}
 
-			console.log(response.data);
-			//if(response.data.success==true){
-			alertify.success("Success!");
-			$state.go('home');
-			//}else{
-			//alertify.error("ERROR");
-			//}
+				}
+				,function(response){
 
-		}
-		,function(response){
+					console.log(response.data);
+					alertify.error("ERROR");
 
-			console.log(response.data);
-			alertify.error("ERROR");
-
-		});
+				});
 	}
 }]);

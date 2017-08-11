@@ -5,7 +5,7 @@ angular.module('wsapp')
 		
 		var req = {
 		    method: 'POST',
-		    url: '/api/signin',
+		    url: '/triple-store-service/student/signin',
 		    headers: {
 		        'Content-Type': 'application/x-www-form-urlencoded'
 		    },
@@ -17,24 +17,6 @@ angular.module('wsapp')
 
 		$http(req).then(onSuccess, onError);
 		
-		},
-		signup: function(username, email, password, onSuccess, onError){
-
-		var req = {
-		    method: 'POST',
-		    url: '/api/signup',
-		    headers: {
-		        'Content-Type': 'application/x-www-form-urlencoded'
-		    },
-		    data: $.param({ 
-		    	username: username,
-		    	email: email,
-		    	password: password 
-		    })
-		}
-		
-		$http(req).then(onSuccess, onError);
-
 		},
         signout: function(onSuccess, onError){
 
@@ -46,7 +28,24 @@ angular.module('wsapp')
 		$http(req).then(onSuccess, onError);
 
         },
-		personalisation: function(surname,name,dateOfBirth,countryOfBirth,placeOfBirth,gender,nationality,streetAndNumber,postalCode,city,country,telephone,email,onSuccess, onError){
+		personalisation: function(
+				surname,
+				name,
+				dateOfBirth,
+				countryOfBirth,
+				placeOfBirth,
+				gender,
+				nationality,
+				streetAndNumber,
+				postalCode,
+				city,
+				country,
+				telephone,
+				email,
+				password,
+				passwordConfirmation,
+				onSuccess, 
+				onError){
 		
 			
 			
@@ -69,7 +68,8 @@ angular.module('wsapp')
 				city : city,
 				country : country,
 				telephone : telephone,
-				email : email
+				email : email,
+				password: password
 		    })
 		}
 		
