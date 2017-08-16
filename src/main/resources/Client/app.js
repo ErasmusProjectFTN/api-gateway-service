@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wsapp', ['ngResource', 'ui.router', 'googlechart', 'ui.bootstrap', 'ui.bootstrap.tpls'])
+angular.module('wsapp', ['ngResource', 'ui.router', 'googlechart', 'ui.bootstrap', 'ui.bootstrap.tpls', 'ngCookies'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/program');

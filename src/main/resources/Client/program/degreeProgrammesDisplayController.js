@@ -1,9 +1,14 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('DegreeProgrammesDisplayController', function ($scope, $location, institutionsDisplayService, $state) {
+    .controller('DegreeProgrammesDisplayController', function ($scope, $location, institutionsDisplayService, $state, $cookies) {
     	
     	$scope.programmes = [];
+
+    	$scope.showApply = false;
+
+    	if ($cookies.get('loginFlag') == 'STUDENT')
+          $scope.showApply =  true;
     	
         institutionsDisplayService.loadProgrammes().then(function(response){
         	$scope.programmes.length = 0;
@@ -36,7 +41,11 @@ angular.module('wsapp')
     		})
         	
         }
-    })
+        
+        $scope.apply = function(){
+        	console.log("TODO apply")
+        }
+    })   
     .controller('DegreeProgrammeInfoController',function($scope, $stateParams, $location, institutionsDisplayService,internshipDisplayService, $state){
 		console.log($stateParams.degreeProgramme);
 		$scope.degreeProgramme = $stateParams.degreeProgramme;

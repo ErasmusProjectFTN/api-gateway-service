@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('SigninController', function ($scope, authService, $location, $state) {
+    .controller('SigninController', function ($scope, authService, $location, $state, $cookies) {
 
-    	console.log("signin controller activated")
     	
     	$scope.signin = function(){
     		//alertify.success("next");
@@ -20,6 +19,9 @@ angular.module('wsapp')
     					//}else{
     					//alertify.error("ERROR");
     					//}
+    					$cookies.put('loginFlag', response.data.flag)
+    					console.log("cookie value")
+    					console.log($cookies.get('loginFlag'))
 
     				}
     				,function(response){
