@@ -1,9 +1,14 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('CoursesDisplayController', function ($scope, $location, institutionsDisplayService, $state) {
+    .controller('CoursesDisplayController', function ($scope, $location, institutionsDisplayService, $state, $cookies) {
         
         $scope.courses = [];
+        
+        $scope.showModifyDelete = false;
+    	
+    	if ($cookies.get('loginFlag') == 'ADMIN')
+    		$scope.showModifyDelete = true;
         
     	institutionsDisplayService.loadCourses().then(function(response){
                 $scope.courses.lenght = 0;
@@ -30,6 +35,14 @@ angular.module('wsapp')
                         $scope.$apply();
                     }
                 });
+        }
+        
+        $scope.modify = function(){
+        	console.log('TODO modify');
+        }
+        
+        $scope.delete = function(){
+        	console.log('TODO delete');
         }
     })
     .controller('CourseInfoController',function($scope, $stateParams){

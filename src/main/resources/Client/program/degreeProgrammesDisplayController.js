@@ -6,9 +6,12 @@ angular.module('wsapp')
     	$scope.programmes = [];
 
     	$scope.showApply = false;
+    	$scope.showModifyDelete = false;
 
     	if ($cookies.get('loginFlag') == 'STUDENT')
-          $scope.showApply =  true;
+    		$scope.showApply =  true;
+    	else if ($cookies.get('loginFlag') == 'ADMIN')
+    		$scope.showModifyDelete = true;
     	
         institutionsDisplayService.loadProgrammes().then(function(response){
         	$scope.programmes.length = 0;
@@ -45,6 +48,15 @@ angular.module('wsapp')
         $scope.apply = function(){
         	console.log("TODO apply")
         }
+        
+        $scope.modify = function(){
+        	console.log('TODO modify')
+        }
+        
+        $scope.delete = function(){
+        	console.log('TODO delete')
+        }
+        
     })   
     .controller('DegreeProgrammeInfoController',function($scope, $stateParams, $location, institutionsDisplayService,internshipDisplayService, $state){
 		console.log($stateParams.degreeProgramme);

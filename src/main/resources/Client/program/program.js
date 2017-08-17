@@ -18,6 +18,19 @@ angular.module('wsapp')
 	                   }
 	               }
 	    )
+	    .state('appliedStudents',{
+	    				url: '/appliedStudents',
+	    				views: {
+	    					'content' : {
+	    						templateUrl: 'program/applied_students.html',
+	    						controller: 'AppliedStudentsController'
+	    					},
+	    					'navbar' :{
+	    						templateUrl: 'navbar/navbar.html',
+	    						controller: 'NavbarController'
+	    					}
+	    				}
+	    })
 	    .state('institutionInfo',{
 	    				url: '/institutionInfo',
 				   		views: {
