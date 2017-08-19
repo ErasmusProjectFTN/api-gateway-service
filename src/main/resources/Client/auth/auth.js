@@ -42,8 +42,20 @@ angular.module('wsapp')
                            controller: 'NavbarController'
                        }
                    }
-               });
-
+               })
+	        .state('signup', {
+	            url: '/signup',
+	            views: {
+	                'content': {
+	                    templateUrl: 'auth/signup/personal.html',
+	                    controller: 'PersonalController'
+	                },
+	                'navbar':{
+	                    templateUrl: 'navbar/navbar.html',
+	                    controller: 'NavbarController'
+	                }
+	            }
+	        });
 
         
 

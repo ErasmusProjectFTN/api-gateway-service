@@ -204,38 +204,42 @@ angular.module('wsapp')
 		]
 	$scope.personalization = function(){
 		//alertify.success("next");
-
-		authService.personalisation(
-				$scope.data.familyname,
-				$scope.data.givenname,
-				$scope.data.dateofbirth,
-				$scope.data.countryofbirth,
-				$scope.data.placeofbirth,
-				$scope.data.selectedOption, //for gender
-				$scope.data.nationality1,
-				$scope.data.street,
-				$scope.data.postalcode,
-				$scope.data.city,
-				$scope.data.country,
-				$scope.data.telephone,
-				$scope.data.email,
-				$scope.data.password,
-				$scope.data.passwordConfirmation,
-				function(response){
-					console.log(response.data);
-					//if(response.data.success==true){
-					alertify.success("Success!");
-					$state.go('program');
-					//}else{
-					//alertify.error("ERROR");
-					//}
-
-				}
-				,function(response){
-
-					console.log(response.data);
-					alertify.error("ERROR");
-
-				});
+		if ($scope.data.password == $scope.data.passwordConfirmation){
+			authService.personalisation(
+					$scope.data.familyname,
+					$scope.data.givenname,
+					$scope.data.dateofbirth,
+					$scope.data.countryofbirth,
+					$scope.data.placeofbirth,
+					$scope.data.selectedOption, //for gender
+					$scope.data.nationality1,
+					$scope.data.street,
+					$scope.data.postalcode,
+					$scope.data.city,
+					$scope.data.country,
+					$scope.data.telephone,
+					$scope.data.email,
+					$scope.data.password,
+					$scope.data.passwordConfirmation,
+					function(response){
+						console.log(response.data);
+						//if(response.data.success==true){
+						alertify.success("Success!");
+						$state.go('program');
+						//}else{
+						//alertify.error("ERROR");
+						//}
+	
+					}
+					,function(response){
+	
+						console.log(response.data);
+						alertify.error("ERROR");
+	
+					});
+		}
+		else{
+			alertify.error("Password and confirmation password are not identical. Please try again.");
+		}
 	}
 }]);

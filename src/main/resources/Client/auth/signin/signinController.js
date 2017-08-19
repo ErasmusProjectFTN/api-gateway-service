@@ -27,7 +27,7 @@ angular.module('wsapp')
     				,function(response){
 
     					console.log(response.data);
-    					alertify.error("ERROR");
+    					alertify.error("Incorrect login information.");
 
     				});
     	}
