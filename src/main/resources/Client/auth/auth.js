@@ -4,19 +4,6 @@ angular.module('wsapp')
     .config(function ($stateProvider) {
         $stateProvider
     $stateProvider
-           .state('fileupload', {
-                   url: '/personal',
-                   views: {
-                       'content': {
-                           templateUrl: 'auth/signup/personalInfoFileUpload.html',
-                           controller: 'PersonalInfoFileUploadController'
-                       },
-                       'navbar':{
-                           templateUrl: 'navbar/navbar.html',
-                           controller: 'NavbarController'
-                       }
-                   }
-               }) 
            .state('signin', {
                    url: '/signin',
                    views: {

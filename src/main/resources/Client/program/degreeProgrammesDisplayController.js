@@ -46,7 +46,7 @@ angular.module('wsapp')
         }
         
         $scope.apply = function(){
-        	console.log("TODO apply")
+    		$state.go('application');
         }
         
         $scope.modify = function(){

@@ -20,7 +20,9 @@ angular.module('wsapp')
     					//alertify.error("ERROR");
     					//}
     					$cookies.put('loginFlag', response.data.flag)
+    					$cookies.put('student', JSON.stringify(response.data.student))
     					console.log("cookie value")
+    					console.log($cookies.get('student'))
     					console.log($cookies.get('loginFlag'))
 
     				}

@@ -72,5 +72,18 @@ angular.module('wsapp')
 	            }
 	   		},
 	   		params: {course: null}
-});
+	    })
+        .state('application', {
+                url: '/application',
+                views: {
+                    'content': {
+                        templateUrl: 'application/application.html',
+                        controller: 'AppliedStudentsController'
+                    },
+                    'navbar':{
+                        templateUrl: 'navbar/navbar.html',
+                        controller: 'NavbarController'
+                    }
+                }
+           });
     });
