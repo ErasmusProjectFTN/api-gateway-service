@@ -96,25 +96,25 @@
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">Upload CV (pdf): </span> 
 			<input type="file" class="form-control"
-				file-model="myFile"/> 
+				file-model="cvFile"  onchange="angular.element(this).scope().uploadFile(this.files)"/>
 		</div>
 		
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">Upload motivational letter (pdf): </span> 
 			<input type="file" class="form-control"
-				file-model="myFile"/> 
+				file-model="myFile" onchange="angular.element(this).scope().uploadFile(this.files)"/> 
 		</div>
 		
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">Upload transcript (pdf): </span> 
 			<input type="file" class="form-control"
-				file-model="myFile"/> 
+				file-model="myFile" onchange="angular.element(this).scope().uploadFile(this.files)"/> 
 		</div>
 		
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">Upload diploma (pdf): </span> 
 			<input type="file" class="form-control"
-				file-model="myFile"/> 
+				file-model="myFile" onchange="angular.element(this).scope().uploadFile(this.files)"/> 
 		</div>
 
 

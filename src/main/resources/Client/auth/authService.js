@@ -85,7 +85,7 @@ angular.module('wsapp')
 			fd.append('file', file);
 		var req = {
 		    method: 'POST',
-		    url: '/file-store-service/user/pdf',
+		    url: '/file-storage-service/storage/user/pdf',
 		    headers: {
 		        'Content-Type': undefined
 		    },

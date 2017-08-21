@@ -78,7 +78,7 @@ angular.module('wsapp')
                 views: {
                     'content': {
                         templateUrl: 'application/application.html',
-                        controller: 'AppliedStudentsController'
+                        controller: 'ApplicationController'
                     },
                     'navbar':{
                         templateUrl: 'navbar/navbar.html',
