@@ -37,15 +37,41 @@ angular.module('wsapp')
     		})
     	}
     	
-    	$scope.modify = function(){
-    		console.log('TODO modify');
+    	$scope.modify = function(institution){
+    		$state.go('modifyInstitution', {institution:institution});
     	}
     	
-    	$scope.delete = function(){
+    	$scope.delete = function(institutionId){
     		console.log('TODO delete');
     	}
     })
 	.controller('InstitutionInfoController',function($scope, $stateParams){
 		console.log($stateParams.institution);
 		$scope.institution = $stateParams.institution;
+	})
+	.controller('InstitutionModifyController',function($scope, $stateParams, institutionsDisplayService, $state){
+		// get data on this institution
+		console.log($stateParams.institution);
+		$scope.data = $stateParams.institution;
+		
+		 $scope.modifyInstitution = function(){
+			 institutionsDisplayService.modifyInstitution($stateParams.institution,
+	       			   function(response){
+
+	        				   console.log(response.data);
+	        				   //if(response.data.success==true){
+	        				   	alertify.success("SUCCESS");
+	        				   	$state.go('home');
+	        				   //}else{
+	        				   	//alertify.error("ERROR");
+	        				   //}
+
+	        			   }
+	        			   ,function(response){
+
+	        					console.log(response.data);
+	        					alertify.error("ERROR");
+
+	        			   });
+	        }
 	});

@@ -45,6 +45,50 @@ angular.module('wsapp')
 			});
 		}
 		
+		//modify institution
+		this.modifyInstitution = function(institution, onSuccess, onError){
+			var req = {
+				    method: 'POST',
+				    url: '/triple-store-service/ects/modifyInstitution', 
+				    headers: {
+				        'Content-Type': 'application/x-www-form-urlencoded'
+				    },
+				    data: $.param({ 
+				    	identifier : institution.identifier, 
+						institutionName : institution.institutionName,
+						institutionalECTScoordinator : institution.institutionalECTScoordinator,
+						institutionStatus : institution.institutionStatus,
+						institutionType : institution.institutionType,
+						institutionAddress : institution.institutionAddress,
+						url : institution.url, 
+						institutionMainUniversityRegulations : institution.institutionMainUniversityRegulations, 
+						institutionGeneralDescription : institution.institutionGeneralDescription,
+						institutionAcademicAuthorities : institution.institutionAcademicAuthorities,
+						institutionAcademicCalendar : institution.institutionAcademicCalendar,
+						institutionAdmissionProcedures : institution.institutionAdmissionProcedures,
+						generalInformationForStudents : institution.generalInformationForStudents,
+						generalInformationForMobileStudents : institution.generalInformationForMobileStudents,
+						generalInformationOnAccommodation : institution.generalInformationOnAccommodation,
+						generalInformationOnCostOfLiving : institution.generalInformationOnCostOfLiving,
+						generalInformationOnExtramuralAndLeisureFacilities : institution.generalInformationOnExtramuralAndLeisureFacilities,
+						generalInformationOnFacilitiesForStudentsWithSpecialNeeds : institution.generalInformationOnFacilitiesForStudentsWithSpecialNeeds,
+						generalInformationOnFinancialSupport : institution.generalInformationOnFinancialSupport,
+						generalInformationOnInsurance : institution.generalInformationOnInsurance,
+						generalInformationOnInternationalProgrammes : institution.generalInformationOnInternationalProgrammes,
+						generalInformationOnInternships : institution.generalInformationOnInternships,
+						generalInformationOnLanguageCourses : institution.generalInformationOnLanguageCourses,
+						generalInformationOnMeals : institution.generalInformationOnMeals,
+						generalInformationOnMedicalFacilities : institution.generalInformationOnMedicalFacilities,
+						generalInformationOnSportsFacilities : institution.generalInformationOnSportsFacilities,
+						generalInformationOnStudentAffairsOffice : institution.generalInformationOnStudentAffairsOffice,
+						generalInformationOnStudentAssociations : institution.generalInformationOnStudentAssociations,
+						generalInformationOnStudyFacilities : institution.generalInformationOnStudyFacilities
+				    })
+				}	
+
+				$http(req).then(onSuccess, onError);
+		}
+		
 		// programmes
 		this.loadProgrammes = function(onSuccess, onError){
 			var req = {

@@ -85,5 +85,19 @@ angular.module('wsapp')
                         controller: 'NavbarController'
                     }
                 }
-           });
+           })
+           .state('modifyInstitution',{
+	    				url: '/modifyInstitution',
+				   		views: {
+				            'content': {
+				                templateUrl: 'institution/modify_institution.html',
+				                controller: 'InstitutionModifyController'
+				            },
+				            'navbar':{
+				                templateUrl: 'navbar/navbar.html',
+				                controller: 'NavbarController'
+				            }
+				   		},
+				   		params: {institution: null}
+	    });
     });
