@@ -203,6 +203,7 @@ angular.module('wsapp')
     	var dob = $scope.student.dateOfBirth
     	$scope.date = new Date(Date.parse(dob));
     	console.log($scope.student)
+    	console.log($scope.student.id)
     	
     	$scope.uploadFile = function(files){
     		applicationService.uploadFile($scope.student.id, files[0],

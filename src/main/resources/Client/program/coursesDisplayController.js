@@ -37,8 +37,8 @@ angular.module('wsapp')
                 });
         }
         
-        $scope.modify = function(){
-        	console.log('TODO modify');
+        $scope.modify = function(course){
+        	$state.go('modifyCourse', {course:course});
         }
         
         $scope.delete = function(){
@@ -48,4 +48,30 @@ angular.module('wsapp')
     .controller('CourseInfoController',function($scope, $stateParams){
 		console.log($stateParams.course);
 		$scope.course = $stateParams.course;
+	})
+	.controller('CourseModifyController',function($scope, $stateParams){
+		// get data on this institution
+		console.log($stateParams.course);
+		$scope.data = $stateParams.course;
+		
+		 $scope.modifyCourse = function(){
+			 institutionsDisplayService.modifyCourse($stateParams.course,
+	       			   function(response){
+
+	        				   console.log(response.data);
+	        				   //if(response.data.success==true){
+	        				   	alertify.success("SUCCESS");
+	        				   	$state.go('home');
+	        				   //}else{
+	        				   	//alertify.error("ERROR");
+	        				   //}
+
+	        			   }
+	        			   ,function(response){
+
+	        					console.log(response.data);
+	        					alertify.error("ERROR");
+
+	        			   });
+	        }
 	});

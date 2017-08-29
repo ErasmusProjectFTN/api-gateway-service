@@ -90,7 +90,7 @@ angular.module('wsapp')
 	    				url: '/modifyInstitution',
 				   		views: {
 				            'content': {
-				                templateUrl: 'institution/modify_institution.html',
+				                templateUrl: 'institution/modifyInstitution.html',
 				                controller: 'InstitutionModifyController'
 				            },
 				            'navbar':{
@@ -99,5 +99,33 @@ angular.module('wsapp')
 				            }
 				   		},
 				   		params: {institution: null}
+	    })
+	    .state('modifyDegree',{
+	    				url: '/modifyDegree',
+				   		views: {
+				            'content': {
+				                templateUrl: 'institution/modifyDegree.html',
+				                controller: 'DegreeModifyController'
+				            },
+				            'navbar':{
+				                templateUrl: 'navbar/navbar.html',
+				                controller: 'NavbarController'
+				            }
+				   		},
+				   		params: {degree: null}
+	    })
+	    .state('modifyCourse',{
+	    				url: '/modifyCourse',
+				   		views: {
+				            'content': {
+				                templateUrl: 'institution/modifyCourse.html',
+				                controller: 'CourseModifyController'
+				            },
+				            'navbar':{
+				                templateUrl: 'navbar/navbar.html',
+				                controller: 'NavbarController'
+				            }
+				   		},
+				   		params: {course: null}
 	    });
     });

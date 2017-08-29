@@ -144,6 +144,39 @@ angular.module('wsapp')
 			});
 		}
 		
+		this.modifyProgramme = function(programme){
+			var req = {
+				    method: 'POST',
+				    url: '/triple-store-service/ects/modifyDegreeProgramme',
+					headers: {
+				        'Content-Type': 'application/x-www-form-urlencoded'
+				    },
+				    data: $.param({ 
+				    	degreeUnitCode : data.degreeunitcode,
+						degreeProgrammeTitle : data.degreeprogrammetitle,
+						location : data.location,
+						qualification : data.qualification,
+						url : data.url,
+						credit : data.credit,
+						degreeProgrammeAccessToFurtherStudies : data.degreeprogrammeaccesstofurtherstudies,
+						degreeProgrammeEducationalAndProfessionalGoals : data.degreeprogrammeeducationalandprofessionalgoals,
+						degreeProgrammeStructureDiagram : data.degreeprogrammestructurediagram,
+						prerequisite : data.prerequisite,
+						departmentalEctsCoordinator : data.departmentalectscoordinator,
+						degreeProgrammeFinalExamination : data.degreeprogrammefinalexaminaton,
+						places : data.places,
+						languageOfInstruction : data.languageofinstruction,
+						degreeProgrammeExaminationAndAssessmentRegulations : data.degreeprogrammeexaminationandassessmentregulations,
+						start : data.start,
+						duration : data.duration,
+						cost : data.cost
+				    
+				    })
+				}	
+
+				$http(req).then(onSuccess, onError);
+		}
+		
 		// courses 
 		this.loadCourses = function(onSuccess, onError){
 			var req = {
@@ -185,5 +218,41 @@ angular.module('wsapp')
 				return response.data;
 			});
 		}
+                
+        this.modifyCourse = function(course){
+        	var req = {
+        		    method: 'POST',
+        		    url: '/triple-store-service/ects/modifyCourseUnit',
+        			headers: {
+        		        'Content-Type': 'application/x-www-form-urlencoded'
+        		    },
+        		    data: $.param({ 
+        		    	courseUnitCode : data.courseunitcode,
+        				courseUnitTitle : data.courseunittitle,
+        				courseUnitType : data.courseunittype,
+        				courseUnitLevel : data.courseunitlevel,
+        				url : data.url,
+        				courseUnitYearOfStudy : data.unityearofstudy,
+        				credit : data.credit,
+        				courseUnitContent : data.courseunitcontent,
+        				courseLocation : data.location,
+        				lecturer : data.lecturer,
+        				languageOfInstruction : data.languageofinstruction,
+        				places : data.places,
+        				courseUnitTermPattern : data.selectedOption,
+        				courseUnitCompetence : data.courseunitcompetence,
+        				courseUnitLearningOutcome : data.courseunitlearningoutcome,
+        				prerequisite : data.prerequisite,
+        				courseUnitRecommendedReading : data.courseunitrecommendedreading,
+        				courseUnitTeachingMethods : data.courseunitteachingmethods,
+        				courseUnitAssessmentMethods : data.courseunitassessmentmethods,
+        				start : data.start,
+        				duration : data.duration,
+        				cost : data.cost
+        		    })
+        		}	
+
+        		$http(req).then(onSuccess, onError);
+        }
 	
 });

@@ -49,8 +49,8 @@ angular.module('wsapp')
     		$state.go('application');
         }
         
-        $scope.modify = function(){
-        	console.log('TODO modify')
+        $scope.modify = function(degree){
+        	$state.go('modifyDegree', {programme:degree});
         }
         
         $scope.delete = function(){
@@ -82,4 +82,30 @@ angular.module('wsapp')
 	        			})
 	    		});
 	    	}
+	})
+	.controller('DegreeModifyController',function($scope, $stateParams, $location, institutionsDisplayService,internshipDisplayService, $state){
+		// get data on this institution
+		console.log($stateParams.programme);
+		$scope.data = $stateParams.programme;
+		
+		 $scope.modifyProgramme = function(){
+			 institutionsDisplayService.modifyProgramme($stateParams.programme,
+	       			   function(response){
+
+	        				   console.log(response.data);
+	        				   //if(response.data.success==true){
+	        				   	alertify.success("SUCCESS");
+	        				   	$state.go('home');
+	        				   //}else{
+	        				   	//alertify.error("ERROR");
+	        				   //}
+
+	        			   }
+	        			   ,function(response){
+
+	        					console.log(response.data);
+	        					alertify.error("ERROR");
+
+	        			   });
+	        }
 	});

@@ -1,0 +1,97 @@
+<div>
+<div class="col-md-3 col-md-offset-3" style="width:60%;" >
+    <h3>DEGREE PROGRAMME SPECIFICATION</h3>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree unit code*: </span>
+    <input type="text" class="form-control" required placeholder="Enter Degree unit code" ng-model="data.degreeunitcode"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme title*: </span>
+    <input type="text" class="form-control" required placeholder="Enter Degree programme title" ng-model="data.degreeprogrammetitle"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Location: </span>
+    <input type="text" class="form-control" required placeholder="Enter Location" ng-model="data.location"/>
+  </div>
+   <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Qualification: </span>
+    <input type="text" class="form-control" required placeholder="Enter Qualification" ng-model="data.qualification"/>
+  </div>
+   <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Url: </span>
+    <input type="text" class="form-control" required placeholder="Enter Url" ng-model="data.url"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Credit: </span>
+    <input type="number" class="form-control" required ng-model="data.credit" step="0.1"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme access to further studies: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter degree programme access to further studies" ng-model="data.degreeprogrammeaccesstofurtherstudies">
+    </textarea>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme educational and professional goals: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter degree programme educational and professional goals" ng-model="data.degreeprogrammeeducationalandprofessionalgoals">
+    </textarea>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme structure diagram: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter degree programme structure diagram" ng-model="data.degreeprogrammestructurediagram">
+    </textarea>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Prerequisite: </span>
+    <input type="text" class="form-control" placeholder="Enter Prerequisite" ng-model="data.prerequisite"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Departmental ects coordinator: </span>
+    <input type="text" class="form-control"  placeholder="Enter Departmental ects coordinator" ng-model="data.departmentalectscoordinator"/>
+  </div>
+   <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme final examinaton: </span>
+    <input type="text" class="form-control"  placeholder="Enter Degree programme final examinaton" ng-model="data.degreeprogrammefinalexaminaton"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Places: </span>
+    <input type="text" class="form-control"  placeholder="Enter Places" ng-model="data.places"/>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Language of instruction: </span>
+    <input type="text" class="form-control" required placeholder="Enter Language of instruction" ng-model="data.languageofinstruction"/>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Degree programme examination and assessment regulations: </span>
+    <textarea type="text" class="form-control"  placeholder="Enter degree programme examination and assessment regulations" ng-model="data.degreeprogrammeexaminationandassessmentregulations">
+    </textarea>
+  </div>
+  
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Start: </span>
+    <input type="date" class="form-control"   ng-model="data.start"/>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Duration (in semesters): </span>
+    <input type="number" class="form-control"   ng-model="data.duration"/>
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">Cost: </span>
+    <input type="text" class="form-control" placeholder="Enter cost" ng-model="data.cost"/>
+  </div>
+  
+  
+  
+<div class="col-md-4 col-md-offset-4">
+  <button class="btn btn-primary" type="button" ng-click="modifyDegree(data)">
+    Modify
+  </button>
+</div>
+
+</div>
+</div>
