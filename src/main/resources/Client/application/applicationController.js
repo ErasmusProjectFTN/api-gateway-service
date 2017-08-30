@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('wsapp')
-    .controller('ApplicationController', function ($scope, $location, applicationService, $state, $cookies) {
+    .controller('ApplicationController', function ($scope, $location, applicationService, $state, $cookies, $stateParams) {
         
+    	console.log($stateParams.programmeId)
+    	$scope.degreeId = $stateParams.programmeId
+    	
     	$scope.availableOptions = [ {name : "- Select -", id : "1"}, {name : "Male", id : "2"},{ name : "Female", id : "3"}];
     	$scope.availableNationalities =[
     		"Afghan",

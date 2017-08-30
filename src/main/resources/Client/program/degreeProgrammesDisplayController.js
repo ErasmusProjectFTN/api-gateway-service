@@ -45,8 +45,9 @@ angular.module('wsapp')
         	
         }
         
-        $scope.apply = function(){
-    		$state.go('application');
+        $scope.apply = function(programmeId){
+        	console.log(programmeId)
+    		$state.go('application', {programmeId:programmeId});
         }
         
         $scope.modify = function(degree){

@@ -84,7 +84,8 @@ angular.module('wsapp')
                         templateUrl: 'navbar/navbar.html',
                         controller: 'NavbarController'
                     }
-                }
+                },
+                params:{programmeId:null}
            })
            .state('modifyInstitution',{
 	    				url: '/modifyInstitution',
