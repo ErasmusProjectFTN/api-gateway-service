@@ -1,7 +1,70 @@
 <div ng-controller = 'AppliedStudentsController'>
-	<table class="table">
+	<table class='table table-borderless'>
 		<tr>
-			<td>This is a table of applied students</td>
+			<td class="col-md-9">
+				<div>
+					<div>
+						<table class="table">
+						  <tr ng-repeat="application in applications" >
+						    <td>
+						    	<table class="table table-borderless">
+						    		<thead>
+						    			<tr><h4>Application: {{application.identifier}}</h4></tr>
+						    		</thead>
+						    		<tbody>
+						    			<tr>
+						    				<th>
+						    					Degree programme id:
+						    				</th>
+						    				<td>
+						    					{{application.degreeProgrammeId}}
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Application status:
+						    				</th>
+						    				<td>
+						    					<select name="repeatSelect" id="repeatSelect" ng-model="application.status" class='form-control' width="48">
+											      <option ng-repeat="option in availableOptions" value="{{option}}">{{option}}</option>
+											    </select>
+						    				</td>
+						    			</tr>
+						    			
+						    			<tr>
+						    				<th>
+						    					Passport:
+						    				</th>
+						    				<td>
+						    					{{application.passport}}
+						    				</td>
+						    			</tr>
+						    			
+						    			
+						    			<tr>
+						    				<th>
+						    					ID card:
+						    				</th>
+						    				<td>
+						    					{{application.idCard}}
+						    				</td>
+						    			</tr>
+						    			<tr>
+						    				<th>
+						    				</th>
+						    				<td>
+						    					<input type="button" class="btn btn-danger" ng-click=modify(application) value="Save changes" width="48">
+						    				</td>
+						    			</tr>
+						    		</tbody>
+						    	</table>
+						    </td>
+						  </tr>
+						</table>
+					</div>
+				</div>
+			</td>
 		</tr>
-		
+	</table>
 </div>

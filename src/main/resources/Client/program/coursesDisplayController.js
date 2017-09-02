@@ -38,6 +38,7 @@ angular.module('wsapp')
         }
         
         $scope.modify = function(course){
+        	console.log(course)
         	$state.go('modifyCourse', {course:course});
         }
         
@@ -49,7 +50,7 @@ angular.module('wsapp')
 		console.log($stateParams.course);
 		$scope.course = $stateParams.course;
 	})
-	.controller('CourseModifyController',function($scope, $stateParams){
+	.controller('CourseModifyController',function($scope, $stateParams, institutionsDisplayService, $state){
 		// get data on this institution
 		console.log($stateParams.course);
 		$scope.data = $stateParams.course;

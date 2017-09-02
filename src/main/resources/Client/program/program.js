@@ -31,6 +31,19 @@ angular.module('wsapp')
 	    					}
 	    				}
 	    })
+	    .state('myApplications',{
+	    				url: '/myApplications',
+	    				views: {
+	    					'content' : {
+	    						templateUrl: 'application/my_applications.html',
+	    						controller: 'ApplicationsController'
+	    					},
+	    					'navbar' :{
+	    						templateUrl: 'navbar/navbar.html',
+	    						controller: 'NavbarController'
+	    					}
+	    				}
+	    })
 	    .state('institutionInfo',{
 	    				url: '/institutionInfo',
 				   		views: {
@@ -113,7 +126,7 @@ angular.module('wsapp')
 				                controller: 'NavbarController'
 				            }
 				   		},
-				   		params: {degree: null}
+				   		params: {programme: null}
 	    })
 	    .state('modifyCourse',{
 	    				url: '/modifyCourse',

@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-recaptcha" : "4.0.3",
+    "angular-recaptcha": "4.0.3",
     "angular-aria": "1.4.8",
     "angular-bootstrap": "0.14.3",
     "angular-cache-buster": "0.4.3",
@@ -40,5 +40,8 @@
     "ngInfiniteScroll": "1.2.1",
     "angular-chart.js": "^0.10.2",
     "angular-google-chart": "0.1.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^0.6.0"
   }
 }

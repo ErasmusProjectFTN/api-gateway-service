@@ -219,4 +219,10 @@ angular.module('wsapp')
     		}
     	
     	
+    })
+    .controller('ApplicationsController', function($scope){
+    	var application1 = {"identifier":'123', "degreeProgrammeId": 'E2', "status": "In progress"};
+    	var application2 = {"identifier":'234', "degreeProgrammeId": 'E1', "status": "Accepted"};
+    	
+    	$scope.applications = [application1, application2];
     });

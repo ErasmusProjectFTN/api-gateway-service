@@ -6,7 +6,8 @@
       <ul class="nav navbar-nav">
         <li><a ui-sref="program">ERASMUS PROGRAM PAGE</a></li>
         <li><a ui-sref="internship">INTERNSHIP</a></li>
-        <li ng-show="isAdmin"><a ui-sref="appliedStudents">APPLIED STUDENTS</a></li>
+        <li ng-show="isStudent"><a ui-sref="myApplications">MY APPLICATIONS</a>
+        <li ng-show="isAdmin"><a ui-sref="appliedStudents">APPLICATIONS</a></li>
         <li ng-show="isAdmin"><a ui-sref="institution">CREATE INSTITUTION</a></li>
         <li ng-show="isAdmin"><a ui-sref="degree">CREATE PROGRAMME</a></li>         
         <li ng-show="isAdmin"><a ui-sref="course">CREATE COURSE</a></li>

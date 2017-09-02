@@ -144,7 +144,7 @@ angular.module('wsapp')
 			});
 		}
 		
-		this.modifyProgramme = function(programme){
+		this.modifyProgramme = function(data, onSuccess, onError){
 			var req = {
 				    method: 'POST',
 				    url: '/triple-store-service/ects/modifyDegreeProgramme',
@@ -152,21 +152,21 @@ angular.module('wsapp')
 				        'Content-Type': 'application/x-www-form-urlencoded'
 				    },
 				    data: $.param({ 
-				    	degreeUnitCode : data.degreeunitcode,
-						degreeProgrammeTitle : data.degreeprogrammetitle,
+				    	degreeUnitCode : data.degreeUnitCode,
+						degreeProgrammeTitle : data.degreeProgrammeTitle,
 						location : data.location,
 						qualification : data.qualification,
 						url : data.url,
 						credit : data.credit,
-						degreeProgrammeAccessToFurtherStudies : data.degreeprogrammeaccesstofurtherstudies,
-						degreeProgrammeEducationalAndProfessionalGoals : data.degreeprogrammeeducationalandprofessionalgoals,
-						degreeProgrammeStructureDiagram : data.degreeprogrammestructurediagram,
+						degreeProgrammeAccessToFurtherStudies : data.degreeProgrammeAccessToFurtherStudies,
+						degreeProgrammeEducationalAndProfessionalGoals : data.degreeProgrammeEducationalAndProfessionalGoals,
+						degreeProgrammeStructureDiagram : data.degreeProgrammeStructureDiagram,
 						prerequisite : data.prerequisite,
-						departmentalEctsCoordinator : data.departmentalectscoordinator,
-						degreeProgrammeFinalExamination : data.degreeprogrammefinalexaminaton,
+						departmentalEctsCoordinator : data.departmentalEctsCoordinator,
+						degreeProgrammeFinalExamination : data.degreeProgrammeFinalExaminaton,
 						places : data.places,
-						languageOfInstruction : data.languageofinstruction,
-						degreeProgrammeExaminationAndAssessmentRegulations : data.degreeprogrammeexaminationandassessmentregulations,
+						languageOfInstruction : data.languageOfInstruction,
+						degreeProgrammeExaminationAndAssessmentRegulations : data.degreeProgrammeExaminationAndAssessmentRegulations,
 						start : data.start,
 						duration : data.duration,
 						cost : data.cost
@@ -219,7 +219,7 @@ angular.module('wsapp')
 			});
 		}
                 
-        this.modifyCourse = function(course){
+        this.modifyCourse = function(data, onSuccess, onError){
         	var req = {
         		    method: 'POST',
         		    url: '/triple-store-service/ects/modifyCourseUnit',
@@ -227,25 +227,25 @@ angular.module('wsapp')
         		        'Content-Type': 'application/x-www-form-urlencoded'
         		    },
         		    data: $.param({ 
-        		    	courseUnitCode : data.courseunitcode,
-        				courseUnitTitle : data.courseunittitle,
-        				courseUnitType : data.courseunittype,
-        				courseUnitLevel : data.courseunitlevel,
+        		    	courseUnitCode : data.courseUnitCode,
+        				courseUnitTitle : data.courseUnitTitle,
+        				courseUnitType : data.courseUnitType,
+        				courseUnitLevel : data.courseUnitLevel,
         				url : data.url,
-        				courseUnitYearOfStudy : data.unityearofstudy,
+        				courseUnitYearOfStudy : data.unitYearOfStudy,
         				credit : data.credit,
-        				courseUnitContent : data.courseunitcontent,
+        				courseUnitContent : data.courseUnitContent,
         				courseLocation : data.location,
         				lecturer : data.lecturer,
-        				languageOfInstruction : data.languageofinstruction,
+        				languageOfInstruction : data.languageOfInstruction,
         				places : data.places,
         				courseUnitTermPattern : data.selectedOption,
-        				courseUnitCompetence : data.courseunitcompetence,
-        				courseUnitLearningOutcome : data.courseunitlearningoutcome,
+        				courseUnitCompetence : data.courseUnitCompetence,
+        				courseUnitLearningOutcome : data.courseUnitLearningOutcome,
         				prerequisite : data.prerequisite,
-        				courseUnitRecommendedReading : data.courseunitrecommendedreading,
-        				courseUnitTeachingMethods : data.courseunitteachingmethods,
-        				courseUnitAssessmentMethods : data.courseunitassessmentmethods,
+        				courseUnitRecommendedReading : data.courseUnitRecommendedReading,
+        				courseUnitTeachingMethods : data.courseUnitTeachingMethods,
+        				courseUnitAssessmentMethods : data.courseUnitAssessmentMethods,
         				start : data.start,
         				duration : data.duration,
         				cost : data.cost
