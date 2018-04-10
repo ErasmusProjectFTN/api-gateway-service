@@ -15,6 +15,10 @@ angular.module('wsapp', ['ngResource', 'ui.router', 'googlechart', 'ui.bootstrap
                        'navbar':{
                            templateUrl: 'navbar/navbar.html',
                            controller: 'NavbarController'
+                       },
+                       'recommender':{
+                    	   templateUrl: 'recommender/recommender.html',
+                    	   controller: 'RecommenderController'
                        }
                    }
                });
